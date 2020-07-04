@@ -10,19 +10,19 @@ import numpy as np
 # form a dataset
 
 def load_dataset(path):
-    test_path = path + '\\testing'
-    train_path = path + '\\training'
+    test_path = path + '/testing'
+    train_path = path + '/training'
 
     dataset = {'test': [],
                'train': []}
 
     for set_name in dataset.keys():
-        set_path = '{}\\{}{}'.format(path, set_name, 'ing')
+        set_path = '{}/{}{}'.format(path, set_name, 'ing')
         for digit in listdir(set_path):
-            digit_path = '{}\\{}'.format(set_path, digit)
+            digit_path = '{}/{}'.format(set_path, digit)
             for im_name in listdir(digit_path):
                 dataset[set_name].append(
-                    (digit_path + '\\' + im_name, digit)
+                    (digit_path + '/' + im_name, digit)
                 )
 
     ds = dataset.copy()
