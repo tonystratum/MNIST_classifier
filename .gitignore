@@ -1,5 +1,5 @@
-./.idea
-/__pycache__
+.idea
+__pycache__
 mnist_png
 Building_your_Deep_Neural_Network_Step_by_Step_v8a.ipynb
 classifies_zeros.ipynb
@@ -8,3 +8,5 @@ cnn_old.ipynb
 load_dataset.ipynb
 load_dataset_f_test.ipynb
 reference.py
+cuda_test.ipynb
+load_dataset_win.py
