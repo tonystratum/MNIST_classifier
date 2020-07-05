@@ -3,8 +3,8 @@ from os import listdir
 
 
 def load_weights(cache_path):
-    W_path = cache_path + 'W/'
-    b_path = cache_path + 'b/'
+    W_path = cache_path + '/W/'
+    b_path = cache_path + '/b/'
 
     weights = {}
     for path in (W_path, b_path):
