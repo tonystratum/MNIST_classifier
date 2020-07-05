@@ -1,6 +1,7 @@
 .idea
 __pycache__
 mnist_png
+cache
 Building_your_Deep_Neural_Network_Step_by_Step_v8a.ipynb
 classifies_zeros.ipynb
 cnn.ipynb
