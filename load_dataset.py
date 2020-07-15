@@ -1,4 +1,5 @@
 # TODO: refactor
+# TODO: multithread
 
 from os import listdir
 from PIL import Image
