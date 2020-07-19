@@ -1,5 +1,4 @@
 # TODO: refactor
-# TODO: multithread
 
 from os import listdir
 from PIL import Image
@@ -7,6 +6,15 @@ from PIL import Image
 from random import shuffle
 
 import numpy as np
+
+from multiprocessing import Pool, cpu_count
+
+
+def open_(tpl):
+    image_path, new_shape = tpl
+    return np.asarray(
+        Image.open(image_path)
+    ).reshape(new_shape)[:, np.newaxis] / 255
 
 # form a dataset
 
@@ -38,12 +46,18 @@ def load_dataset(path):
                'train': None}
 
     for set_name in ds.keys():
-
+        ###
+        '''
         X = [np.asarray(
             Image.open(image_path)
         ).reshape(new_shape)[:, np.newaxis] / 255
              for image_path, Y_value in ds[set_name]
              ]
+        '''
+
+        p = Pool(cpu_count())
+        X = list(p.map(open_, [(x[0], y) for x, y in zip(ds[set_name], [new_shape for i in range(len(ds[set_name]))])]))
+
         X = np.concatenate(X, axis=1)
 
         Y_l = []
