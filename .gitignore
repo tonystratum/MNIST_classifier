@@ -1,6 +1,8 @@
 .idea
 __pycache__
 mnist_png
+wip_gitignored
+/modules/ignored/
 
 Building_your_Deep_Neural_Network_Step_by_Step_v8a.ipynb
 classifies_zeros.ipynb
@@ -10,6 +12,11 @@ load_dataset.ipynb
 load_dataset_f_test.ipynb
 reference.py
 cuda_test.ipynb
-load_dataset_win.py
-test.ipynb
-works.ipynb
+modules/ignored/load_dataset_win.py
+wip_gitignored/test.ipynb
+wip_gitignored/works.ipynb
+
+/cache/95p.tar.xz
+/cache/97p.tar.xz
+/cache/b/b3.csv
+/cache/W/w3.csv

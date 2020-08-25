@@ -1,6 +1,7 @@
 import cupy as np
 
-from activation_functions import activation_selector
+from modules.activation_functions import activation_selector
+
 
 
 class Layer:
