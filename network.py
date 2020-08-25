@@ -1,6 +1,7 @@
 import numpy as np
 
-from activation_functions import activation_selector
+from modules.activation_functions import activation_selector
+
 
 class Layer:
     """
@@ -130,9 +131,8 @@ class Network:
             for layer in layers:
                 self.add_layer(layer)
 
-        #assert layers[0] is Input, 'First layer has to be an Input!'
+        # assert layers[0] is Input, 'First layer has to be an Input!'
         self.samples = self.layers[0].get_n_of_samples()
-
 
     def add_layer(self, layer):
         # TODO: def add_layer()
@@ -182,9 +182,9 @@ class Network:
         for index in range(1, len(self.layers) - 1):
             dA_previous = self.layers[-index].dA
             dZ_previous = self.layers[-index].dZ
-            A_next = self.layers[-2-index].A
+            A_next = self.layers[-2 - index].A
             W_previous = self.layers[-index].W
-            self.layers[-1-index].backward(self.samples, dA_previous, dZ_previous, A_next, W_previous)
+            self.layers[-1 - index].backward(self.samples, dA_previous, dZ_previous, A_next, W_previous)
 
     def update_parameters(self, learning_rate):
         """

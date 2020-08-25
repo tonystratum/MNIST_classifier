@@ -1,6 +1,6 @@
 import numpy as np
 
-from im2col import im2col_sliding_strided
+from modules.im2col import im2col_sliding_strided
 
 
 def convolve_2d(input, W, stride=1):
