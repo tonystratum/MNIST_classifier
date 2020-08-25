@@ -1,7 +1,6 @@
-import cupy as np
+import numpy as np
 
 from modules.activation_functions import activation_selector
-
 
 
 class Layer:
@@ -136,6 +135,7 @@ class Network:
         self.samples = self.layers[0].get_n_of_samples()
 
     def add_layer(self, layer):
+        # TODO: def add_layer()
         if any(self.layers):
             # shape of the new layer will be determined
             # by the shape of the previous layer
