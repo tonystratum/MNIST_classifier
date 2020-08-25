@@ -1,7 +1,5 @@
 import numpy as np
 
-from multiprocessing import Pool, cpu_count
-
 
 # activation functions and their derivatives
 # sigmoid
@@ -37,17 +35,10 @@ def tanh_d(x):
 
 
 # softmax
-def s(x):
-    shiftx = x - np.max(x)
-    exps = np.exp(shiftx)
-    return exps / np.sum(exps)
-
-
 def softmax(x):
-    slices = np.hsplit(x, x.shape[1])
-    p = Pool(cpu_count())
-    concat = np.concatenate(list(p.map(s, slices)), axis=1)
-    return np.array(concat)
+    exp_max = np.exp(x - np.max(x, axis=0, keepdims=True))
+    out = exp_max / np.sum(exp_max, axis=0, keepdims=True)
+    return out
 
 
 def activation_selector(activation, last=False):
